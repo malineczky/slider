@@ -5,7 +5,7 @@ $slide-height: rem(500px);
 
 .slider {
   background-color: lightblue;
-position: relative;
+  position: relative;
 }
 
 .slides {
@@ -71,7 +71,7 @@ position: relative;
   top: 50%;
   transform: translateY(-50%);
   width: calc(100% - 40px);
-
+  box-sizing: border-box;
   &__btn {
     background-image: url("#{$img-path}/arrow.svg");
     background-repeat: no-repeat;
@@ -82,7 +82,7 @@ position: relative;
     cursor: pointer;
     overflow: hidden;
     text-indent: -999px;
-    opacity: 0.5;
+    opacity: .5;
     transition: opacity 400ms ease-in-out;
     &:hover {
       opacity: 1;
@@ -90,7 +90,6 @@ position: relative;
 
     &.nav__btn--prev {
       transform: rotate(180deg);
-      
     }
   }
 }

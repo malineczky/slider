@@ -1,0 +1,19 @@
+@use "sass:map";
+
+@import "functions";
+@import "variables";
+
+@mixin mq($breakpoint){
+    $value: map.get($grid-breakpoints, $breakpoint);
+
+
+    @if $value == null {
+        @warn "Invalid breakpoint name: #{$breakpoint}, You should use #{map.keys($grid-breakpoints)}.";
+        $value: 0px;
+    }
+
+    @media screen and (min-width: rem($value)) {
+       @content;
+    }
+}
+

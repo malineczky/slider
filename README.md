@@ -32,3 +32,5 @@
     // }
 
 // na górze rozszerzenie pętli
+
+

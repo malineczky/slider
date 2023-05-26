@@ -307,6 +307,22 @@ template {
   display: none;
 }
 
+.layout {
+  width: 100%;
+  margin-inline: auto;
+  transition: width 400ms;
+}
+@media screen and (min-width: 0rem) {
+  .layout {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .layout {
+    width: 50%;
+  }
+}
+
 @font-face {
   font-family: "Roboto Black";
   src: url("../fonts/roboto-black-webfont.woff2") format("woff2"), url("../fonts/roboto-black-webfont.woff") format("woff");
@@ -319,10 +335,6 @@ template {
   font-weight: normal;
   font-style: normal;
 }
-body {
-  height: 20rem;
-}
-
 html, body {
   font-size: 16px;
 }
@@ -387,10 +399,6 @@ html, body {
     left: 0%;
   }
 }
-body {
-  height: 20rem;
-}
-
 .slider {
   background-color: lightblue;
   position: relative;
@@ -461,6 +469,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   width: calc(100% - 40px);
+  box-sizing: border-box;
 }
 .nav__btn {
   background-image: url("../images/arrow.svg");

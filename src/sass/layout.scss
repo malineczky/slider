@@ -1,0 +1,19 @@
+@import "functions";
+@import "mixins";
+
+.layout {
+    width: 100%;
+    margin-inline: auto;
+    transition: width 400ms;
+    
+    @include mq(smx) {
+        width: 80%;
+    }
+
+    @include mq(md) {
+        width: 50%;
+    }
+}
+
+
+

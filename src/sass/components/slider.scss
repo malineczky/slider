@@ -1,0 +1,95 @@
+@import "../utils/animations";
+@import "../functions";
+
+$slide-height: rem(500px);
+
+.slider {
+  background-color: lightblue;
+  position: relative;
+}
+
+.slides {
+  position: relative;
+  overflow: hidden;
+  min-height: $slide-height;
+
+  &__slide {
+    width: 100%;
+    min-height: $slide-height;
+    position: absolute;
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-name: slide-#{$i};
+        background-image: url("#{$img-path}/slide-#{$i}.jpeg");
+        left: ($i - 1) * 100%;
+      }
+    }
+  }
+
+  &__box {
+    background-color: rgba(0, 0, 0, .7);
+    color: rgb(255, 255, 255);
+    padding: rem(20px) rem(110px) rem(20px) rem(20px);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__hdl {
+    margin-top: 0;
+    font-family: "Roboto Black", serif;
+  }
+
+  &__lead {
+    font-family: "Roboto Medium", sans-serif;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    position: absolute;
+    right: rem(20px);
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Roboto Black", sans-serif;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: rem(20px);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  &__btn {
+    background-image: url("#{$img-path}/arrow.svg");
+    background-repeat: no-repeat;
+    width: rem(46px);
+    height: rem(46px);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    text-indent: -999px;
+    opacity: .5;
+    transition: opacity 400ms ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+
+    &.nav__btn--prev {
+      transform: rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+$sass-pink: rgba(0, 240, 25, 0.1);
+
+color: $sass-pink; 
+
+LISTA
+// zawsze w nawiasach
+// przecinek separator
+$font-stack: ('Helvetica', 'Arial', 'Open sans');
+
+MAPA
+$breakpoint: (
+    'small': 7px, // 'klucz': wartość
+    'medium': 10px,
+    'large': 90px,
+);
+
+//ZMIENNA VARIABLES
+$variable: 'initial value';
+$font-color: blue;
+
+
+body {
+    font: $font-stack;
+    background-color: $font-color;
+
+}
+
